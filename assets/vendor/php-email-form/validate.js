@@ -53,12 +53,11 @@
     fetch(action, {
       method: 'POST',
       body: formData,
-      headers: {'X-Requested-With': 'XMLHttpRequest'},
-      mode: "no-cors"
+      headers: {'Accept': 'application/javascript'}
     })
     .then(response => {
       if( response.ok ) {
-        return response.text();
+        return "OK"; // response.text();
       } else {
         throw new Error(`${response.status} ${response.statusText} ${response.url}`); 
       }
